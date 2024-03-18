@@ -32,7 +32,7 @@
   #buttons button {
     background-color: #0f0;
     border: none;
-    color: #fff;
+    color: black;
     padding: 8px 15px;
     border-radius: 5px;
     cursor: pointer;
@@ -61,15 +61,16 @@ function changeFaviconAndTitle() {
     // Change the title
     document.title = 'Google';
 }
-</script>
-  <script>
-    document.getElementById('fullscreen-btn').addEventListener('click', function() {
-        if (document.fullscreenElement) {
+<script>
+function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        if (document.exitFullscreen) {
             document.exitFullscreen();
-        } else {
-            document.documentElement.requestFullscreen();
         }
-    });
+    }
+}
 </script>
 </head>
 <body>
@@ -79,7 +80,7 @@ function changeFaviconAndTitle() {
       <button onclick="location.href='javascript:history.go(-1)'" type="button">
          Wstecz</button>
       <button onclick="changeFaviconAndTitle()">Nazwij karte w Google</button>
-      <button id="fullscreen-btn">Fullscreen</button>
+      <button onclick="toggleFullScreen()">Pełny ekran</button>
     </div>
   </div>
   <div id="iframe-container">
