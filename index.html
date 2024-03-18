@@ -62,6 +62,15 @@ function changeFaviconAndTitle() {
     document.title = 'Google';
 }
 </script>
+  <script>
+    document.getElementById('fullscreen-btn').addEventListener('click', function() {
+        if (document.fullscreenElement) {
+            document.exitFullscreen();
+        } else {
+            document.documentElement.requestFullscreen();
+        }
+    });
+</script>
 </head>
 <body>
   <div id="neon-bar">
@@ -70,6 +79,7 @@ function changeFaviconAndTitle() {
       <button onclick="location.href='javascript:history.go(-1)'" type="button">
          Wstecz</button>
       <button onclick="changeFaviconAndTitle()">Nazwij karte w Google</button>
+      <button id="fullscreen-btn">Fullscreen</button>
     </div>
   </div>
   <div id="iframe-container">
