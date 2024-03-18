@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>gryplus.github</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  #neon-bar {
+    background-color: #000;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+  #logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  #buttons {
+    display: flex;
+    gap: 10px;
+  }
+  #buttons button {
+    background-color: #0f0;
+    border: none;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  #iframe-container {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 40px); /* Adjust height to accommodate neon bar */
+    overflow: hidden;
+  }
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+</style>
+<script>
+  function changeFaviconAndTitle() {
+    // Change favicon
+    var favicon = document.getElementById('favicon');
+    favicon.href = 'https://www.google.com/favicon.ico';
+
+    // Change title
+    document.title = 'Google';
+  }
+</script>
+</head>
+<body>
+  <div id="neon-bar">
+    <a href="#" id="logo">gryplus.github</a>
+    <div id="buttons">
+      <button onclick="changeFaviconAndTitle()">Change Favicon and Title</button>
+      <button>Button 2</button>
+      <button>Button 3</button>
+    </div>
+  </div>
+  <div id="iframe-container">
+    <iframe src="https://www.example.com" frameborder="0"></iframe>
+  </div>
+</body>
+</html>
