@@ -102,3 +102,82 @@
 </script>
 </body>
 </html>
+<style>
+/* Styles for the button */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff; /* Initial color */
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Rainbow animation for the button */
+@keyframes rainbow {
+  0% { background-color: #ff0000; }
+  20% { background-color: #ff7f00; }
+  40% { background-color: #ffff00; }
+  60% { background-color: #00ff00; }
+  80% { background-color: #0000ff; }
+  100% { background-color: #8a2be2; }
+}
+
+.animated {
+  animation: rainbow 5s infinite alternate;
+}
+
+/* Fade effect for all elements */
+.fade {
+  transition: opacity 1s ease;
+}
+
+/* Background color transition */
+body {
+  background-color: #fff; /* Initial background color */
+  transition: background-color 1s ease;
+}
+
+body.fade-bg {
+  background-color: #357ec7; /* Final background color */
+}
+
+/* Fade in effect */
+.fade-in {
+  opacity: 1;
+}
+
+/* Fade out effect */
+.fade-out {
+  opacity: 0;
+}
+</style>
+</head>
+<body>
+
+<!-- Button with animation -->
+<a class="button animated fade">Więcej gier</a>
+
+<script>
+// Function to handle page transition
+function redirectToURL() {
+  // Add fade-out effect to all elements with the 'fade' class
+  var elementsToFade = document.querySelectorAll('.fade');
+  elementsToFade.forEach(function(element) {
+    element.classList.add('fade-out');
+  });
+  
+  // Change background color of the page
+  document.body.classList.add('fade-bg');
+
+  // Redirect to the URL after the fade-out effect completes
+  setTimeout(function() {
+    window.location.href = "/listwięcej.html";
+  }, 1000); // Adjust timing based on the fade-out duration
+}
+
+// Add click event listener to the button
+document.querySelector('.button').addEventListener('click', redirectToURL);
+</script>
