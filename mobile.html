@@ -1,1 +1,80 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>plusgry.github</title>
+<link rel="shortcut icon" id="favicon" href="console_game_icon_216085.ico" type="image/x-icon">
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  #neon-bar {
+    background-color: #000;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+  #logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  #buttons {
+    display: flex;
+    gap: 10px;
+  }
+  #buttons button {
+    background-color: #0f0;
+    border: none;
+    color: black;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  #iframe-container {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 51px); /* Adjust height to accommodate neon bar */
+    overflow: hidden;
+  }
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Fix width */
+    height: 100%; /* Fix height */
+    border: none;
+  }
+</style>
+<script>
+function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        }
+    }
+}
+</script>
+</head>
+<body>
+  <div id="neon-bar">
+    <a href="/" id="logo">plusgry.github</a>
+    <div id="buttons">
+      <button onclick="location.href='javascript:history.go(-1)'" type="button">
+         Wstecz</button>
+      <button onclick="toggleFullScreen()">Pełny ekran</button>
+    </div>
+  </div>
+  <div id="iframe-container">
+    <iframe src="/listmobile.html" frameborder="0"></iframe>
+  </div>
+</body>
+</html>
